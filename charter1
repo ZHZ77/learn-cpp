@@ -1,0 +1,85 @@
+常量：用于记录程序中不可更改的数据
+	  写法
+	  #define 宏常量：#define 常量名 常量值
+	  const修饰的变量 const 数据类型 常量名 = 常量值   
+	  在变量定义前面+const修饰改变量为常量
+
+
+ 关键字
+  标识符命名规则 1 不能是关键字
+				2 只能由数字、字母、 下划线组成
+				3 标识符第一个字符只能是字母或下划线
+				4 标识符区分大小写
+
+数据类型存在意义：给变量分配合适的内存空间  不要造成资源浪费
+
+整型
+short（短整型）		占2个字节                                  
+int（整型）			占4个字节    （开发中最常用）								  
+long(长整型)        win占4字节   Linux4字节（32位）8字节（64位） 
+long long（长长整型） 占8个字节
+
+
+sizeof关键字
+作用：利用sizeof关键字可以统计数据类型所占内存大小
+语法：sizeof（数据类型/变量）
+
+实型（浮点型）
+作用：用于表示小数
+浮点型变量分为两种：
+1、单精度float   占用4字节   7位有效数字
+2、双精度double  占用8字节   15-16位有效数字
+float num = 3.14f;   float在初始值后面+f double不写就代表
+
+ 科学计数法Xex 若x为正数则表示X*10^x x为负数则X*0.1^x
+
+字符型
+作用：字符型变量用于显示单个字符串   内存大小1字节
+语法：char 名称 = 'string';
+注意：在显示字符型变量时，用单引号将字符括起来，不要用双引号
+单引号内只能由一个字符不可以是字符串
+将对应的ASCII编码放入存储单元  a--97 A--65
+
+转义字符
+作用：用来表示一些不能显示出来的ASCII字符
+常用：\n换行  \\代表一个反斜线  \t水平制表ht table凑够8个（对齐效果）
+
+字符串型
+作用：用于表示一串字符
+两种风格 1 C风格字符串 char 变量名[] = "字符串值"    比字符多了方括号且双引号
+		2 C++风格 string 变量名 = "字符串值"
+
+
+布尔类型bool    占用1字节
+作用：布尔数据类型代表真或假的值
+bool类型只有两个值
+true--真（本质是1）
+false--假（本质是0）
+写法：bool flag = true;
+
+
+数据的输入
+作用：用于从键盘获取数据
+关键字：cin
+语法：cin >> 变量
+
+#include <iostream>
+using namespace std;
+#define day 7
+int main()
+{
+	bool flag = true;
+	char ch[] = "这是字符串";
+	string ch1 = "这也是个字符串";
+	cout << "hello word" << endl;//输出hello word
+	//变量创建语法： 数据类型 变量名 = 变量初始值
+	const int a = 10;//这时a的值不可被修改
+	cout << "a = " << a << endl;
+	cout << "一周总共有  " << day << "天" << endl;
+	cout << "a占用多少内存空间为多大" << sizeof(a) << endl;
+	cout << ch << endl;
+	cout << ch1 << endl;
+	cout << sizeof(bool) << endl;
+	system("pause");
+	return 0;
+}
